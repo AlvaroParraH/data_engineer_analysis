@@ -1,24 +1,31 @@
 # Data Engineer Analysis
 
-This repository is a starting point for data engineering analysis work.
+This repository contains a starter Playwright-based scraper example for collecting product information from Amazon.
 
 ## Overview
 
-Use this project to organize notebooks, scripts, datasets, and analysis notes related to data engineering tasks.
+The project includes a simple script that opens a product or search page, waits for the page content to load, and extracts a title and price when available.
 
 ## Getting Started
 
-1. Clone the repository.
-2. Create and activate a Python environment if needed.
-3. Add your analysis scripts, notebooks, and documentation here.
+1. Install the project dependencies with uv.
+2. Create a local environment file based on [.env.example](.env.example).
+3. Run the scraper from the project root.
+
+## Usage
+
+```bash
+./.venv/bin/python scripts/amazon_scraper.py
+```
+
+You can also set a different Amazon URL before running:
+
+```bash
+AMAZON_PRODUCT_URL="https://www.amazon.com/dp/B08N5WRWNW" ./.venv/bin/python scripts/amazon_scraper.py
+```
 
 ## Project Structure
 
-- `notebooks/` for exploratory analysis
-- `scripts/` for reusable Python or SQL scripts
-- `data/` for input or sample datasets
-- `docs/` for additional documentation
-
-## Notes
-
-Update this README as the project grows and add specific setup, usage, and contribution instructions.
+- `scripts/` for scraper-related Python code
+- `.env` for local environment variables
+- `.env.example` as a template for configuration
